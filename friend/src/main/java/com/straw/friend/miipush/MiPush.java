@@ -3,10 +3,8 @@ package com.straw.friend.miipush;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.alibaba.fastjson.JSON;
 import com.xiaomi.xmpush.server.Constants;
 import com.xiaomi.xmpush.server.Message;
-import com.xiaomi.xmpush.server.Result;
 import com.xiaomi.xmpush.server.Sender;
 import com.xiaomi.xmpush.server.TargetedMessage;
 

@@ -7,21 +7,22 @@
     <!-- Spring和mybatis的配置文件 -->  
     <context-param>  
         <param-name>contextConfigLocation</param-name>  
-        <param-value>classpath:spring-mybatis.xml</param-value>  
+        <param-value>classpath:spring-config.xml</param-value>  
     </context-param>  
-    <!-- shiro过滤器 -->
-    <filter>
-		<filter-name>shiroFilter</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-		<init-param>
-			<param-name>targetFilterLifecycle</param-name>
-			<param-value>true</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>shiroFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+     <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
     <!-- 编码过滤器 -->  
     <filter>  
         <filter-name>encodingFilter</filter-name>  
@@ -61,6 +62,16 @@
         <!-- 此处可以可以配置成*.do，对应struts的后缀习惯 -->  
         <url-pattern>/</url-pattern>  
     </servlet-mapping>  
+    <servlet>  	
+   		 <servlet-name>kaptcha</servlet-name>  
+   		 <servlet-class>  
+      		  com.google.code.kaptcha.servlet.KaptchaServlet  
+   		 </servlet-class>  
+	</servlet>  
+	<servlet-mapping>  
+   		 <servlet-name>kaptcha</servlet-name>  
+   		 <url-pattern>/static/images/captcha.jpeg</url-pattern>  
+	</servlet-mapping>  
     <welcome-file-list>  
         <welcome-file>/index.jsp</welcome-file>  
     </welcome-file-list>  
