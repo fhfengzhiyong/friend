@@ -29,7 +29,6 @@ public class JokeServiceImpl implements IJokeService {
 	}
 
 	public List<Joke> findList() {
-		// TODO Auto-generated method stub
 		return jokeDao.findList();
 	}
 

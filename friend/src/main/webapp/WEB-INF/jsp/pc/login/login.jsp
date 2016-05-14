@@ -27,7 +27,7 @@ function refreshCaptcha(){
 	<div class="main_box">
 		<div class="login_box">
 			<div class="login_logo">
-				<img src="<%=basePath%>/static/images/logo.png" >
+				<img  style="width:100px;height:10px;" src="<%=basePath%>/static/images/logo_manage.png" >
 			</div>
 		
 			<div class="login_form">

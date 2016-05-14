@@ -92,4 +92,5 @@
 	<!-- 引入配置文件 -->
 	<import resource="classpath:shior/spring-config-cache.xml" />
 	<import resource="classpath:shior/spring-config-shiro.xml" />
+<!-- 	<import resource="classpath:activemq/spring-mq-queue.xml" /> -->
 </beans>  

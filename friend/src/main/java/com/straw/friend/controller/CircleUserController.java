@@ -37,11 +37,10 @@ public class CircleUserController extends BaseController{
 	public Map findCircleByUserId(HttpServletRequest request,
 			Model model) {
 		String deviceId = request.getParameter("deviceId");
-		List<CircleUser> circleUserList = this.circleUserService
-				.findCircleByUserId(deviceId);
+		List<CircleUser> circleUserList = this.circleUserService.findCircleByUserId(deviceId);
 		map.put("content", circleUserList);
 		return map;
-	}
+	} 
 	/**
 	 * 根据圈子的id,查询出这个圈子的人和最后一次的地址.
 	 * @param request

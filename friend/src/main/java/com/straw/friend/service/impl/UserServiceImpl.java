@@ -15,7 +15,8 @@ public class UserServiceImpl implements IUserService {
 		return this.userDao.selectByPrimaryKey(userId);
 	}
 	public User getUserByDeviceId(String deviceId) {
-		return this.userDao.serlectByDeviceId(deviceId);
+		User serlectByDeviceId = this.userDao.serlectByDeviceId(deviceId);
+		return serlectByDeviceId;
 	}
 	public int insertSelective(User user) {
 		return this.userDao.insertSelective(user);

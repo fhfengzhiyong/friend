@@ -1,0 +1,57 @@
+package com.myrule.leave;
+import com.straw.test.drools.bean.dto.LeaveFormDTO;
+import com.straw.test.drools.bean.dto.FactorialDTO;
+import com.straw.test.drools.bean.dto.Person;
+import com.straw.test.drools.bean.dto.Hello;
+import com.straw.test.drools.bean.dto.LeaveFormDTO.LeaveType;
+import com.straw.test.drools.bean.dto.LeaveFormDTO.GenderType;
+rule "校验请产假"
+	when
+		$leaveForm : LeaveFormDTO(leaveType == LeaveType.MATERNITY, gender == GenderType.MALE)
+	then
+		$leaveForm.setAgree(false);
+		$leaveForm.getHello().sysHello($leaveForm.getMessage());
+		$leaveForm.setMessage("男人不能请产假的");
+		
+end
+
+rule "打印当前计算状态"
+	when
+		$f : FactorialDTO()
+	then
+		System.out.println(" n = " + $f.getN() + ", v = " + $f.getV());
+end
+
+rule "状态更新"
+	when
+		$f : FactorialDTO(n > 1)
+	then
+	    System.out.println("对象状态更新...");
+		modify($f) {
+			setV($f.getV() * $f.getN()),
+			setN($f.getN() - 1)
+		}
+end
+rule "rule1"
+	when
+		$p : Person()
+		$p2 : Person(this != $p)
+	then
+		System.out.println('rule1, name1  = ' + $p.getName() + ", name2 = " + $p2.getName());
+end
+
+rule "rule2"
+	when
+		not Person(name == 'xxx')
+	then
+		insert( new Person('xxx') );
+		System.out.println('rule2, insert xxx ');
+end
+
+rule "rule3"
+	when
+		$p : Person()
+		$p2 : Person(this != $p)
+	then
+		System.out.println('rule3, name1  = ' + $p.getName() + ", name2 = " + $p2.getName());
+end

@@ -1,31 +1,8 @@
 package com.straw.test;
 
-import java.util.List;
-
-import javax.annotation.Resource;
-
-import org.apache.log4j.Logger;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import com.alibaba.fastjson.JSON;
-import com.straw.friend.bean.Circle;
-import com.straw.friend.bean.CircleUser;
-import com.straw.friend.bean.Joke;
-import com.straw.friend.bean.Location;
-import com.straw.friend.bean.User;
-import com.straw.friend.miipush.MiPush;
-import com.straw.friend.service.ICircleService;
-import com.straw.friend.service.ICircleUserService;
-import com.straw.friend.service.IJokeService;
-import com.straw.friend.service.ILocationService;
-import com.straw.friend.service.IUserService;
-
-@RunWith(SpringJUnit4ClassRunner.class)
+/*@RunWith(SpringJUnit4ClassRunner.class)
 // 表示继承了SpringJUnit4ClassRunner类
-@ContextConfiguration(locations = { "classpath:spring-mybatis.xml" })
+@ContextConfiguration(locations = { "classpath:spring-mybatis.xml" })*/
 public class TestMyBatis {/*
 	private static Logger logger = Logger.getLogger(TestMyBatis.class);
 	@Resource
